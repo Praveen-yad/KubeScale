@@ -1,0 +1,23 @@
+{
+  "name": "kubescale-backend",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "dependencies": {
+    "@ngrok/ngrok": "^1.5.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "get-port": "^7.1.0",
+    "multer": "^2.0.2",
+    "path": "^0.12.7",
+    "unzipper": "^0.12.3"
+  }
+}
