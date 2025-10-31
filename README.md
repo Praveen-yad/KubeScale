@@ -95,12 +95,12 @@ Follow these steps to run **KubeScale** locally for development or testing.
 ### Install dependencies
 Backend
 
-- cd backend
+- cd kubescale-backend
 - npm install
 
 Frontend
 
-- cd ../frontend
+- cd ../kubescale_f
 - npm install
 
 ### Setup environment variables
