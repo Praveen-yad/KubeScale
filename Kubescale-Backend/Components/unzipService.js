@@ -40,7 +40,7 @@ export const unzipFile = async (zipFilePath, res) => {
     })
     .on("error", (err) => console.log(err))
     .promise();
-    res.write(JSON.stringify({progress: 30, message: "File Extracted"}) + '\n')
+    res.write(JSON.stringify({progress: 30, message: "Extracted and Prepared Resources"}) + '\n')
     fs.unlinkSync(absZipFilePath);
 
   return extractDir;

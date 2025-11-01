@@ -8,7 +8,7 @@ export const buildDockerImage = async ( projectRoot, imageName, res ) => {
     try{
         await execPromice(`cd ${projectRoot} && docker build -t ${imageName} .`);
         console.log(`Build Successful : ${imageName}`);
-        res.write(JSON.stringify({progress: 60, message:"Image Created"}) + '\n')
+        res.write(JSON.stringify({progress: 60, message:"Built Docker Image"}) + '\n')
     }catch(err){
         console.error("❌ Build Failed:", err.stderr || err.message);
         throw new Error("Docker Build Failed");

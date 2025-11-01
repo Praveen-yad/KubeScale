@@ -28,5 +28,5 @@ CMD ["nginx", "-g", "daemon off;"]
 
     fs.writeFileSync(dockerfilePath, content.trim());
     console.log("DockerFile created");
-    res.write(JSON.stringify({progress: 40, message: "DockerFile Created"}) + '\n')
+    res.write(JSON.stringify({progress: 40, message: "Generated Optimized Dockerfile"}) + '\n')
 }
