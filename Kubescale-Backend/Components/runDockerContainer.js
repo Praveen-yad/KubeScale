@@ -15,7 +15,7 @@ export const runDockerContainer = async (imageName, res) => {
     const containerId = stdout.trim();
     const url = `http://localhost:${port}`;
     console.log(`Container running at ${url}`);
-    res.write(JSON.stringify({progress: 90, message: "Container is Running"}) + '\n');
+    res.write(JSON.stringify({progress: 90, message: "Deployed Docker Container"}) + '\n');
     return { containerId, url };
   } catch (err) {
     console.error(" Failed to run container:", err.stderr);

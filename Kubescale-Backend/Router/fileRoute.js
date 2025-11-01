@@ -21,7 +21,7 @@ const upload = multer({
 
 router.post("/deploy", upload.single("projectZip"), async(req,res) => {
     try{
-        res.write(JSON.stringify({progress: 15, message:"File Uploded"}) + "\n");
+        res.write(JSON.stringify({progress: 15, message:"Uploaded Application Artifacts"}) + "\n");
         const extractedFolder = await unzipFile(req.file.path, res);
         const rootFolder = extractedFolder+`/${path.basename(req.file.originalname, ".zip")}`;
         createDockerFile(rootFolder, res);
@@ -33,7 +33,7 @@ router.post("/deploy", upload.single("projectZip"), async(req,res) => {
         const port = url.split(":")[2];
         const publicUrl = await exposeApp(port);
         console.log(publicUrl);
-        res.write(JSON.stringify({progress: 100, message: publicUrl.url}) + '\n');
+        res.write(JSON.stringify({progress: 100, message:"Application Deployed", link:publicUrl.url}) + '\n');
     }catch(err){
         console.log(err);
         res.status(400).write(JSON.stringify({progress : 0, message: "Error Occored, Try Again"}))
